@@ -1,1 +1,11 @@
-<p>movie-info works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ data.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    {{ data.content }}
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [mat-dialog-close] color="primary">Close</button>
+  </mat-card-actions>
+</mat-card>

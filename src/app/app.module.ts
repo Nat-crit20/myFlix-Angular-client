@@ -19,17 +19,26 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
-
-// const appRoutes: Routes = [
-//   { path: 'welcome', component: WelcomePageComponent },
-//   { path: 'movies', component: MovieCardComponent },
-//   { path: 'user', component: UserProfileComponent },
-//   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
-// ];
+import { RouterModule, Routes } from '@angular/router';
+const appRoutes: Routes = [
+  { path: 'welcome', component: WelcomPageComponent },
+  { path: 'movies', component: MovieCardComponent },
+  { path: 'user', component: UserProfileComponent },
+  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+];
 
 @NgModule({
-  declarations: [AppComponent, UserRegistrationFormComponent, WelcomPageComponent, UserProfileComponent, UserLoginFormComponent, MovieInfoComponent, MovieCardComponent],
+  declarations: [
+    AppComponent,
+    UserRegistrationFormComponent,
+    WelcomPageComponent,
+    UserProfileComponent,
+    UserLoginFormComponent,
+    MovieInfoComponent,
+    MovieCardComponent,
+  ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
