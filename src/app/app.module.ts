@@ -20,6 +20,10 @@ import { UserLoginFormComponent } from './user-login-form/user-login-form.compon
 import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomPageComponent },
   { path: 'movies', component: MovieCardComponent },
@@ -36,6 +40,7 @@ const appRoutes: Routes = [
     UserLoginFormComponent,
     MovieInfoComponent,
     MovieCardComponent,
+    NavbarComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -50,6 +55,8 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     FormsModule,
     MatIconModule,
+    MatToolbarModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
