@@ -13,7 +13,7 @@ export class NavbarComponent {
     this.router.navigate(['user']);
   }
 
-  gotToMovies(): void {
+  goToMovies(): void {
     this.router.navigate(['movies']);
   }
 
