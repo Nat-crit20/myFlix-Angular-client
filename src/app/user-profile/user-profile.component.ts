@@ -18,10 +18,12 @@ export class UserProfileComponent implements OnInit {
   constructor(
     public fetchApi: UserRegistrationService,
     public route: Router,
-    public snackbar: MatSnackBar
+    public snackBar: MatSnackBar
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getUser();
+  }
 
   getUser(): void {
     this.user = this.fetchApi.getUser();
@@ -38,5 +40,22 @@ export class UserProfileComponent implements OnInit {
         return this.user.FavoriteMovies.indexOf(movie._id) >= 0;
       });
     });
+  }
+
+  editUser() {
+    this.fetchApi.updateUser(this.userData).subscribe(
+      (result) => {
+        localStorage.setItem('user', JSON.stringify(result));
+        window.location.reload();
+        this.snackBar.open('User successfully updated', 'OK', {
+          duration: 2000,
+        });
+      },
+      (result) => {
+        this.snackBar.open(result, 'OK', {
+          duration: 2000,
+        });
+      }
+    );
   }
 }

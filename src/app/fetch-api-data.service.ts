@@ -122,7 +122,7 @@ export class UserRegistrationService {
     const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
     return this.http
-      .put(apiUrl + 'users/' + storedUser.id, userDetails, {
+      .put(apiUrl + 'users/' + storedUser._id, userDetails, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
