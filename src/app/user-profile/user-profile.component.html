@@ -1,4 +1,21 @@
 <app-navbar></app-navbar>
 <div>
   <h1>Profile</h1>
+  <p>Username:{{ user.Username }}</p>
+  <p>Email:{{ user.Email }}</p>
+
+  <h2>Favorite Movies</h2>
+  <mat-card *ngFor="let movie of favoriteMovies" style="flex: 1 1 auto">
+    <mat-card-header>
+      <mat-card-title>{{ movie.Title }}</mat-card-title>
+      <mat-card-subtitle
+        >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <img
+      src="{{ movie.ImagePath }}"
+      alt="{{ movie.Title }}"
+      style="height: 500px"
+    />
+  </mat-card>
 </div>
