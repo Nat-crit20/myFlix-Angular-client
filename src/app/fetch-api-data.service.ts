@@ -109,7 +109,7 @@ export class UserRegistrationService {
     storedUser.FavoriteMovies.push(movieID);
     localStorage.setItem('user', JSON.stringify(storedUser));
     return this.http
-      .post(apiUrl + 'users/' + storedUser.id + '/movies/' + movieID, {
+      .post(apiUrl + 'users/' + storedUser._id + '/movies/' + movieID, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
