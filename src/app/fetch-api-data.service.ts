@@ -103,13 +103,13 @@ export class UserRegistrationService {
   }
 
   //Add a movie to favorite Movies
-  addFavToUser(movie: string): Observable<any> {
+  addFavToUser(movieID: string): Observable<any> {
     const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
-    storedUser.FavoriteMovies.push(movie);
+    storedUser.FavoriteMovies.push(movieID);
     localStorage.setItem('user', JSON.stringify(storedUser));
     return this.http
-      .post(apiUrl + 'users/' + storedUser.id + '/movies/' + movie, {
+      .post(apiUrl + 'users/' + storedUser.id + '/movies/' + movieID, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
@@ -159,6 +159,10 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  isFavoriteMovie(movieId: string): boolean {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return user.FavoriteMovies.indexOf(movieId) >= 0;
+  }
   //Non-types response extraction
   private extractResponseData(res: any): any {
     const body = res;

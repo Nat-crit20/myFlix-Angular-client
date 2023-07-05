@@ -35,7 +35,25 @@ export class MovieCardComponent {
         title: name,
         content: description,
       },
-      //width: '280px'
+    });
+  }
+
+  isFavorite(id: string): boolean {
+    return this.fetchApiData.isFavoriteMovie(id);
+  }
+
+  addToFavorite(id: string): void {
+    this.fetchApiData.addFavToUser(id).subscribe((result) => {
+      this.snackBar.open('Movie added to favorites.', 'OK', {
+        duration: 2000,
+      });
+    });
+  }
+  removeToFavorite(id: string): void {
+    this.fetchApiData.removeFavFromUser(id).subscribe((result) => {
+      this.snackBar.open('Movie added to favorites.', 'OK', {
+        duration: 2000,
+      });
     });
   }
 }
