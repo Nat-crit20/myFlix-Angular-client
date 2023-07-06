@@ -103,17 +103,22 @@ export class UserRegistrationService {
   }
 
   //Add a movie to favorite Movies
-  addFavToUser(movieID: string): Observable<any> {
-    const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+  addFavToUser(movieId: string): Observable<any> {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
-    storedUser.FavoriteMovies.push(movieID);
-    localStorage.setItem('user', JSON.stringify(storedUser));
+    user.FavoriteMovies.push(movieId);
+    localStorage.setItem('user', JSON.stringify(user));
     return this.http
-      .post(apiUrl + 'users/' + storedUser._id + '/movies/' + movieID, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
+      .post(
+        apiUrl + 'users/' + user._id + '/movies/' + movieId,
+        {},
+        {
+          headers: new HttpHeaders({
+            Authorization: 'Bearer ' + token,
+          }),
+          responseType: 'text',
+        }
+      )
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
@@ -146,12 +151,16 @@ export class UserRegistrationService {
   //Delete a movie from the favorite movies
   removeFavFromUser(movie: string): Observable<any> {
     const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
-    storedUser.FavoriteMovies.filter((movieID: string) => movieID !== movie);
+    const index = storedUser.FavoriteMovies.indexOf(movie);
+    console.log(index);
+    if (index > -1) {
+      // only splice array when item is found
+      storedUser.FavoriteMovies.splice(index, 1);
+    }
     localStorage.setItem('user', JSON.stringify(storedUser));
-
     const token = localStorage.getItem('token');
     return this.http
-      .delete(apiUrl + 'users/' + storedUser.Username + '/movies/' + movie, {
+      .delete(apiUrl + 'users/' + storedUser._id + '/movies/' + movie, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),

@@ -24,7 +24,6 @@ export class MovieCardComponent {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      console.log(this.movies);
       return this.movies;
     });
   }
@@ -51,7 +50,7 @@ export class MovieCardComponent {
   }
   removeToFavorite(id: string): void {
     this.fetchApiData.removeFavFromUser(id).subscribe((result) => {
-      this.snackBar.open('Movie added to favorites.', 'OK', {
+      this.snackBar.open('Movie removed from favorites.', 'OK', {
         duration: 2000,
       });
     });

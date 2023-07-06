@@ -23,6 +23,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatListModule } from '@angular/material/list';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomPageComponent },
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

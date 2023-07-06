@@ -58,4 +58,21 @@ export class UserProfileComponent implements OnInit {
       }
     );
   }
+
+  deleteUser(): void {
+    this.fetchApi.deleteUser().subscribe(
+      (res) => {
+        localStorage.clear();
+        this.route.navigate(['welcome']);
+        this.snackBar.open('User successfully deleted', 'OK', {
+          duration: 2000,
+        });
+      },
+      (res) => {
+        this.snackBar.open(res, 'OK', {
+          duration: 2000,
+        });
+      }
+    );
+  }
 }
