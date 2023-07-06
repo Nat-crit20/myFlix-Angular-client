@@ -1,1 +1,14 @@
-
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+mat-form-field {
+  margin: 1rem;
+}
+mat-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

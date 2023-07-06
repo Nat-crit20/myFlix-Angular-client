@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div>
+<div class="user-profile">
   <h1>Profile</h1>
   <p>Username: {{ user.Username }}</p>
   <p>Email: {{ user.Email }}</p>
@@ -20,7 +20,7 @@
     </mat-list>
   </div>
 
-  <mat-card>
+  <mat-card style="margin: 1rem; text-align: center; width: 80%">
     <mat-card-header>
       <mat-card-title>Update User!</mat-card-title>
     </mat-card-header>
@@ -73,5 +73,12 @@
       </button>
     </mat-card-actions>
   </mat-card>
-  <button mat-raised-button (click)="deleteUser()" color="warn">Delete</button>
+  <button
+    mat-raised-button
+    (click)="deleteUser()"
+    color="warn"
+    style="text-align: center"
+  >
+    Delete
+  </button>
 </div>
