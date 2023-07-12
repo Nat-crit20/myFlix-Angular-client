@@ -23,14 +23,17 @@ export class UserLoginFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Makes a call to the API to login a user
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe(
       (result) => {
         //Logic for a successful user registration goes here! (To be implemented)
-        localStorage.setItem('user', JSON.stringify(result.user));
-        localStorage.setItem('token', result.token);
+        localStorage.setItem('user', JSON.stringify(result.user)); //Add user info to the local storage
+        localStorage.setItem('token', result.token); //Add token to the local storage
         this.dialogRef.close(); // This will close the modal on success!
-        this.router.navigate(['movies']);
+        this.router.navigate(['movies']); // redirect to the movie card
         this.snackBar.open(result, 'OK', {
           duration: 2000,
         });

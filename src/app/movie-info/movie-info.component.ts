@@ -5,6 +5,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './movie-info.component.html',
   styleUrls: ['./movie-info.component.css'],
 })
+/**
+ * Grabs the data from the movie card to create a modal for the movies
+ */
 export class MovieInfoComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)

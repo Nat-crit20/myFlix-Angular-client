@@ -6,6 +6,10 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
+
+/**
+ * created to navigate the app
+ */
 export class NavbarComponent {
   constructor(public router: Router) {}
 

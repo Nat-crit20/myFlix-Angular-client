@@ -21,14 +21,20 @@ export class MovieCardComponent {
     this.getMovies();
   }
 
+  /**
+   * gets the movies from the api
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       return this.movies;
     });
   }
-  // This is used to create info about the genre, director, or the synopsis
+  /**
+   *  This is used to create info about the genre, director, or the synopsis
+   */
   openInfo(name: string, description: string): void {
+    //Opens the Movie Info Modal
     this.dialog.open(MovieInfoComponent, {
       data: {
         title: name,
@@ -37,10 +43,19 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * Checks if a movie is a favorite for a user
+   * @param id Movie ID
+   * @returns boolean
+   */
   isFavorite(id: string): boolean {
     return this.fetchApiData.isFavoriteMovie(id);
   }
 
+  /**
+   * Makes a call to the API to add a movie to the users favorites
+   * @param id movie ID
+   */
   addToFavorite(id: string): void {
     this.fetchApiData.addFavToUser(id).subscribe((result) => {
       this.snackBar.open('Movie added to favorites.', 'OK', {
@@ -48,6 +63,11 @@ export class MovieCardComponent {
       });
     });
   }
+
+  /**
+   * Makes a call to the API to remove a movie to the users favorites
+   * @param id movie ID
+   */
   removeToFavorite(id: string): void {
     this.fetchApiData.removeFavFromUser(id).subscribe((result) => {
       this.snackBar.open('Movie removed from favorites.', 'OK', {
