@@ -11,6 +11,11 @@ import { Router } from '@angular/router';
   templateUrl: './user-login-form.component.html',
   styleUrls: ['./user-login-form.component.css'],
 })
+
+/**
+ * User Login Form
+ * @component
+ */
 export class UserLoginFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '' };
 

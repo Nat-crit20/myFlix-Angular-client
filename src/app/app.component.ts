@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 
 /**
  * Default entry point to the myFlix (Angular) application.
+ * @component
  */
 export class AppComponent {
   title = 'myFlix-Angular-client';

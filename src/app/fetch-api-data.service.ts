@@ -14,6 +14,7 @@ const apiUrl = 'https://blooming-shore-67354.herokuapp.com/';
 })
 /**
  * Creates a serves to load data from the API
+ * @component
  */
 export class UserRegistrationService {
   // Inject the HttpClient module to the constructor params

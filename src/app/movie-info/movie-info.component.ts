@@ -7,6 +7,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 /**
  * Grabs the data from the movie card to create a modal for the movies
+ * @component
  */
 export class MovieInfoComponent implements OnInit {
   constructor(

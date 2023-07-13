@@ -10,6 +10,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css'],
 })
+
+/**
+ * User Profile Component
+ * @component
+ */
 export class UserProfileComponent implements OnInit {
   user: any = {};
   favoriteMovies: any[] = [];

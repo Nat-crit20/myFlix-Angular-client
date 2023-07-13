@@ -1,0 +1,9 @@
+{
+  "entryPoints": ["src/app"],
+  "exclude": ["node_modules"],
+  "out": "docs",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "theme": "default"
+}

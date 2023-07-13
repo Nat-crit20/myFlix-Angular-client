@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 /**
  * Welcome page(login and register)
+ * @component
  */
 export class WelcomPageComponent {
   constructor(public dialog: MatDialog) {}

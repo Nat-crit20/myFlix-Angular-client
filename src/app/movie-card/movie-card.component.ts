@@ -8,6 +8,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.css'],
 })
+
+/**
+ * Movie Card
+ * @component
+ */
 export class MovieCardComponent {
   movies: any[] = [];
   constructor(

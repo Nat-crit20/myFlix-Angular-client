@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 
 /**
  * created to navigate the app
+ * @component
  */
 export class NavbarComponent {
   constructor(public router: Router) {}
