@@ -2,6 +2,27 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
 
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- Login and Sign up as a user
+- See a list of movies
+
+## My process
+This Angular version for my React application that is the frontend for the movie-api backend that I created. You can register an account, login, modify your account details, delete your account, see all movies from the database, search for movies, see movie details, add movies to your list of favorites and delete movies from your list of favorites.
+
+### Built with
+
+- Typescript
+- Anugluar
+
+## Author
+
+- Github - [@Nat-crit20](https://github.com/Nat-crit20)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
