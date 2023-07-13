@@ -23,6 +23,18 @@ This Angular version for my React application that is the frontend for the movie
 
 - Github - [@Nat-crit20](https://github.com/Nat-crit20)
 
+## Getting started
+
+Install angular-cli
+
+### Installation
+
+Clone the repository:
+
+```shell
+git clone https://github.com/Nat-crit20/myFlix-Angular-client.git
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
