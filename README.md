@@ -1,6 +1,7 @@
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+Live Site -[https://nat-crit20.github.io/myFlix-Angular-client/](https://nat-crit20.github.io/myFlix-Angular-client/)
 
 ## Overview
 
